@@ -247,7 +247,7 @@ class ResumeScreen(Resource):
         final_database2.fillna(0, inplace=True)
         new_data = final_database2.iloc[:, 1:]
         new_data.index = final_database2['Candidate Name']
-        json=new_data.to_json()
+        
         # execute the below line if you want to see the candidate profile in a csv format
         sample2 = new_data.to_csv('C:/Users/manikotarajas.tumul/HCL Technologies Ltd/MYCO - check/sample/sample.csv')
         import matplotlib.pyplot as plt
@@ -268,7 +268,7 @@ class ResumeScreen(Resource):
                 height = rect.get_height()
                 ax.text(x + width / 2., y + height / 2., label, ha='center', va='center')
         plt.savefig("C:/Users/manikotarajas.tumul/HCL Technologies Ltd/MYCO - check/graph/graph.png")
-        return json
+        return 200
 
 class ConvertToPdf(Resource):
     def get(self):
